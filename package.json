@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build-css": "tailwindcss build src/style.css -o dist/buildedStyle.css --watch"
+    "build-css": "tailwindcss build src/style.css -o build/buildedStyle.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.0.23",
