@@ -6,13 +6,15 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build-css": "tailwindcss build src/style.css -o build/buildedStyle.css --watch"
+    "build-css": "tailwindcss build src/style.css -o build/buildedStyle.css --watch",
+    "deploy": "gh-pages -d ./dist"
   },
   "devDependencies": {
     "tailwindcss": "^3.0.23",
     "vite": "^2.8.0"
   },
   "dependencies": {
+    "gh-pages": "^3.2.3",
     "gsap": "^3.9.1",
     "three": "^0.138.3"
   }
