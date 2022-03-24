@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build-css": "tailwindcss build src/style.css -o dist/buildedStyle.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.0.23",
+    "vite": "^2.8.0"
+  },
+  "dependencies": {
+    "gsap": "^3.9.1",
+    "three": "^0.138.3"
+  }
+}

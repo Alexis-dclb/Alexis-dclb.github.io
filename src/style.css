@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  
+  font-family: "Exo-thin";
+  src: url("../Asset/font/Exo2/static/Exo2-ThinItalic.ttf") format('TrueType');
+}
+
+@font-face {
+  font-family: "Exo-Italic-bold";
+  src: url("../Asset/font/Exo2/static/Exo2-SemiBoldItalic.ttf") format('TrueType');
+}
+
+.title {
+  position: absolute;
+  font-family: "Exo-thin";
+  font-size: 50px;
+  width: 100%;
+  top: 30%;
+}
+
+.sentence-title {
+  position: absolute;
+  font-family: "Exo-Italic-bold";
+  font-size: 75px;
+  width: 100%;
+  top: 35%;
+}
+
+.container-icon {
+  position: absolute;
+  top: 75%;
+  color: white;
+}
+
+.arrow-icon {
+  animation: mouse-scroll 1s linear infinite;
+}
+
+@-webkit-keyframes mouse-scroll {
+  0%   { opacity: 0;}
+  20%  { opacity: .5;}
+  50%  { opacity: 1;}
+  75% { opacity: 0.5;}
+  100% { opacity: 0;}
+}
+@-moz-keyframes mouse-scroll {
+  0%   { opacity: 0;}
+  20%  { opacity: .5;}
+  50%  { opacity: 1;}
+  75% { opacity: 0.5;}
+  100% { opacity: 0;}
+}
+@-o-keyframes mouse-scroll {
+  0%   { opacity: 0;}
+  20%  { opacity: .5;}
+  50%  { opacity: 1;}
+  75% { opacity: 0.5;}
+  100% { opacity: 0;}
+}
+@keyframes mouse-scroll {
+  0%   { opacity: 0;}
+  20%  { opacity: .5;}
+  50%  { opacity: 1;}
+  75% { opacity: 0.5;}
+  100% { opacity: 0;}
+}
+
+
