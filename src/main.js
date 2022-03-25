@@ -1,6 +1,6 @@
 import * as THREE from '../node_modules/three/src/Three.js';
 import gsap from 'gsap';
-//import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js'
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js'
 
 window.addEventListener( 'resize', onWindowResize, false );
 function onWindowResize(){
@@ -16,11 +16,20 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer({canvas: threejsCanva});
 renderer.setSize(window.innerWidth, window.innerHeight );
 renderer.setPixelRatio(devicePixelRatio)
 document.body.appendChild( renderer.domElement );
-//new OrbitControls(camera, renderer.domElement)
+const control = new OrbitControls(camera, renderer.domElement)
+control.enableZoom = false
+control.minPolarAngle = 1.4
+control.maxPolarAngle = 1.7
+
+control.minAzimuthAngle = -0.1
+control.maxAzimuthAngle = 0.1
+
+control.rotateSpeed = 0.07
+control.enablePan = false;
 
 // GEOMETRY
 const planeGeometry = new THREE.PlaneGeometry(700,400,50,50);
@@ -70,12 +79,13 @@ const light = new THREE.DirectionalLight(0xffffff, 1)
 light.position.set(0, 1, 1)
 
 
+const backlight = new THREE.DirectionalLight(0xffffff, 1)
+backlight.position.set(0, 1, -1)
 
 
 scene.add(planeMesh);
 scene.add(light);
-
-
+scene.add(backlight);
 camera.position.z = 150;
 
 const mouse = {

@@ -1,6 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+  overflow: overlay;
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: black;
+}
+body::-webkit-scrollbar {
+  width: 7px;
+}
+body::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255, 255, 0.3);
+  border-radius: 10px;
+}
 
 @font-face {
   
@@ -13,25 +30,34 @@
   src: url("../Asset/font/Exo2/static/Exo2-SemiBoldItalic.ttf") format('TrueType');
 }
 
-.title {
+@font-face {
+  font-family: "Exo-light";
+  src: url("../Asset/font/Exo2/static/Exo2-Light.ttf") format('TrueType');
+}
+
+#threejsCanva {
+  position: fixed;
+}
+.content {
   position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  margin-top: 30vh;
+  height: 1500px;
+}
+.title {
   font-family: "Exo-thin";
   font-size: 50px;
-  width: 100%;
-  top: 30%;
 }
 
 .sentence-title {
-  position: absolute;
   font-family: "Exo-Italic-bold";
   font-size: 75px;
-  width: 100%;
-  top: 35%;
 }
 
 .container-icon {
-  position: absolute;
-  top: 75%;
+  margin-top: 37vh;
   color: white;
 }
 
@@ -67,5 +93,83 @@
   75% { opacity: 0.5;}
   100% { opacity: 0;}
 }
+
+.side-info-left {
+  width: 40px;
+  position: fixed;
+  bottom: 0px;
+  left: 40px;
+  right: auto;
+}
+.info-icon {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  list-style: none
+}
+
+.info-icon li {
+ padding: 20px;
+ color: white;
+}
+
+.info-icon .fa {
+  font-size: 1.3em;
+ }
+
+.info-icon::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0px auto;
+  background-color: white;
+}
+
+.side-info-right {
+  width: 40px;
+  position: fixed;
+  bottom: 0px;
+  left: auto;
+  right: 40px;
+}
+
+.email-container-right {
+  display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.email-container-right::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0px auto;
+  background-color: white;
+}
+
+.email-container-right a {
+  margin: 20px auto;
+  padding: 10px;
+  font-family: "Exo-light";
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  color: white;
+}
+
+
+
+
+
+
+
 
 
